@@ -43,7 +43,7 @@ const LogIn = (props) => {
             setEmail('')
             setPass('')
             setError(null)
-            props.history.push('/inicio')
+            // props.history.push('/inicio')
         } catch (error) {
             console.log(error)
             if (error.code === 'auth/invalid-email') {
@@ -56,7 +56,7 @@ const LogIn = (props) => {
                 setError('* Contraseña incorrecta')
             }
         }
-    }, [email, pass, props.history])
+    }, [email, pass ])
  
     const loginWithGoogle = () => {
         const provider = new firebase.auth.GoogleAuthProvider();
