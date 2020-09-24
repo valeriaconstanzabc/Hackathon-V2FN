@@ -43,7 +43,6 @@ const LogIn = (props) => {
             setEmail('')
             setPass('')
             setError(null)
-            saveInfoProfile()
             props.history.push('/inicio')
         } catch (error) {
             console.log(error)

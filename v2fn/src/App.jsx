@@ -6,6 +6,7 @@ import {
 } from "react-router-dom";
 import {auth } from '../src/firebase.js'
 import LogIn from './components/views/LogIn.jsx';
+// import SignIn from './components/views/SignIn.jsx';
 
 function App() {
 
@@ -29,9 +30,9 @@ function App() {
           <Route path="/" exact>
             <LogIn />
           </Route>
-          
+
           <Route path="/registro">
-            <SignIn />
+            {/* <SignIn /> */}
           </Route>
 
         </Switch>
