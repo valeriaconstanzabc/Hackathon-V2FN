@@ -1,10 +1,43 @@
 import React from 'react';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route
+} from "react-router-dom";
+import {auth } from '../src/firebase.js'
+import LogIn from './components/views/LogIn.jsx';
 
 function App() {
-  return (
-    <div>
-      <h1>Listas para partir</h1>
-    </div>
+
+  const [firebaseUser, setFirebaseUser] = React.useState(false)
+
+  React.useEffect(() => {
+      auth.onAuthStateChanged(user => {
+          console.log(user)
+          if(user){
+              setFirebaseUser(user)
+          }else{
+              setFirebaseUser(null)
+          }
+      })
+  }, [])
+
+  return firebaseUser !== false ?(
+      <Router>
+        <Switch>
+          
+          <Route path="/" exact>
+            <LogIn />
+          </Route>
+          
+          <Route path="/registro">
+            <SignIn />
+          </Route>
+
+        </Switch>
+      </Router>
+  ):(
+    <div>Cargando...</div>
   );
 }
 
