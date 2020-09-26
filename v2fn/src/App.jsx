@@ -5,8 +5,10 @@ import {
   Route
 } from "react-router-dom";
 import {auth } from '../src/firebase.js'
-import LogIn from './components/views/LogIn';
-import SignIn from './components/views/SingIn';
+import LogIn from './components/views/LogIn.jsx';
+import List from './components/list/List.jsx';
+
+//import SignIn from './components/views/SignIn.jsx';
 
 function App() {
 
@@ -32,7 +34,12 @@ function App() {
           </Route>
 
           <Route path="/registro">
-            <SignIn />
+            {/* <SignIn /> */}
+          </Route>
+
+          <Route path="/board">
+            <List />
+           
           </Route>
 
         </Switch>
