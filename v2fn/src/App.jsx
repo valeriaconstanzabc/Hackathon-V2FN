@@ -5,16 +5,10 @@ import {
   Route
 } from "react-router-dom";
 import {auth } from '../src/firebase.js'
-<<<<<<< HEAD
 import LogIn from './components/views/login.jsx';
 import SignIn from './components/views/singin.jsx';
-import  Menu from './components/views/menu.jsx'
-=======
-import Contacts from './components/Contacts.jsx';
-import Nav from './components/Nav.jsx';
-import LogIn from './components/views/LogIn';
-// import SignIn from './components/views/SingIn';
->>>>>>> b5b303185c80632909cec3c2613bb8d762a6e525
+import  Menu from './components/views/menu.jsx';
+// import  Contacts from './components/views/Contact.jsx';
 
 function App() {
 
@@ -46,8 +40,8 @@ function App() {
           </Route>
 
           <Route path="/inicio">
-            <Nav />
-            <Contacts />
+            <Menu />
+            {/* <Contacts /> */}
           </Route>
 
         </Switch>
