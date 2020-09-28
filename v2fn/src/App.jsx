@@ -8,7 +8,8 @@ import {auth } from '../src/firebase.js'
 import LogIn from './components/views/login.jsx';
 import SignIn from './components/views/singin.jsx';
 import  Menu from './components/views/menu.jsx';
-// import  Contacts from './components/views/Contact.jsx';
+import Contacts from './components/Contacts.jsx';
+import Nav from './components/Nav.jsx';
 
 function App() {
 
@@ -40,8 +41,8 @@ function App() {
           </Route>
 
           <Route path="/inicio">
-            <Menu />
-            {/* <Contacts /> */}
+            <Nav />
+            <Contacts />
           </Route>
 
         </Switch>
