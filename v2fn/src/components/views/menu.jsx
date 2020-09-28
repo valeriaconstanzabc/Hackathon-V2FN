@@ -6,7 +6,7 @@ const Menu = (props) => {
 
 return (
 
-<div class="row">
+<div class="row containerMenu">
   <div class="col-3">
     <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
     <a class="nav-link" id="v-pills-home-tab" data-toggle="pill" href="#v-pills-home" role="tab" aria-controls="v-pills-home" aria-selected="true"> 
