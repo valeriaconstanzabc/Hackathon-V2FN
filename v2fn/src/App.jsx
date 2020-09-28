@@ -5,8 +5,9 @@ import {
   Route
 } from "react-router-dom";
 import {auth } from '../src/firebase.js'
-import LogIn from './components/views/LogIn';
-import SignIn from './components/views/SingIn';
+import LogIn from './components/views/login.jsx';
+import SignIn from './components/views/singin.jsx';
+import  Menu from './components/views/menu.jsx'
 
 function App() {
 
@@ -25,6 +26,8 @@ function App() {
 
   return firebaseUser !== false ?(
       <Router>
+        <Menu />
+
         <Switch>
           
           <Route path="/" exact>
