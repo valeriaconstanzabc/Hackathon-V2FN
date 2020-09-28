@@ -5,8 +5,8 @@ import {
   Route
 } from "react-router-dom";
 import {auth } from '../src/firebase.js'
-import LogIn from './components/views/login.jsx';
-import SignIn from './components/views/singin.jsx';
+import LogIn from './components/views/LogIn.jsx';
+import SignIn from './components/views/SingIn.jsx';
 import  Menu from './components/views/menu.jsx';
 import Contacts from './components/Contacts.jsx';
 import Nav from './components/Nav.jsx';
@@ -37,7 +37,7 @@ function App() {
           </Route>
 
           <Route path="/registro">
-            {/* <SignIn /> */}
+            <SignIn />
           </Route>
 
           <Route path="/inicio">

@@ -1,7 +1,7 @@
 import React from 'react'
 import { withRouter } from 'react-router-dom'
 import { hiddenPassword, observer, saveInfoProfile } from '../Functions.js';
-import { auth,db } from '../../firebase.js'
+import { auth } from '../../firebase.js'
 import firebase from 'firebase/app'
 
 const SignIn = (props) => {
@@ -37,7 +37,6 @@ const SignIn = (props) => {
         console.log('Pasando todas las validaciones')
         setError(null)
         register()
-        props.history.push('/inicio')
     }
 
     const register = React.useCallback(async () => {
@@ -46,17 +45,11 @@ const SignIn = (props) => {
             await res.user.updateProfile({
                 displayName: name,
             })
-            await db.collection('usuarios').doc(userr.uid).add({
-                photoURL: null,
-                name: userr.displayName,
-                email: userr.email,
-                uid: userr.uid,
-                state: true
-            })
             setName('')
             setEmail('')
             setPass('')
             setError(null)
+            saveInfoProfile()
             observer()
         } catch (error) {
             console.log(error)
@@ -80,22 +73,6 @@ const SignIn = (props) => {
         }).catch(() => {
         });
     }
-
-    // const saveInfoProfile = async () => {
-    //     const user = auth.currentUser;
-    //     const db = firebase.firestore()
-    //     try {
-    //       await db.collection('usuarios').doc().set({
-    //         photoURL: null,
-    //         name: user.displayName,
-    //         email: user.email,
-    //         uid: user.uid,
-    //         state: true
-    //       })
-    //     } catch (error) { 
-    //       console.log(error) 
-    //     }
-    // }
 
     return (
         <div className="containerSignIn">
