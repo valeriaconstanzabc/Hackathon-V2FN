@@ -28,8 +28,6 @@ function App() {
 
   return firebaseUser !== false ?(
       <Router>
-        <Menu />
-
         <Switch>
           
           <Route path="/" exact>
@@ -43,6 +41,7 @@ function App() {
           <Route path="/inicio">
             <Nav />
             <Contacts />
+            <Menu />
           </Route>
 
         </Switch>

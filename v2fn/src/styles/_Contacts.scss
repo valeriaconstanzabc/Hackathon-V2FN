@@ -14,8 +14,11 @@
         box-sizing: border-box;
         padding: 20px 7px 20px 7px;
         width: 53px;
-        min-height: 590px;
+        min-height: 575px;
         height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
         .containerContactUser{
             display: flex;
@@ -24,13 +27,22 @@
             width: 100%;
             margin-bottom: 10px;
         }
-        .estado{
+        .estadoOffline{
             position: fixed;
             background: #FF0000;
             border-radius: 5px;
             width: 8px;
             height: 8px;
-            margin-top: -12px;
+            margin-top: -8px;
+            margin-left: 28px;
+        }
+        .estadoOnline{
+            position: fixed;
+            background: #2FCD36;
+            border-radius: 5px;
+            width: 8px;
+            height: 8px;
+            margin-top: -8px;
             margin-left: 28px;
         }
         .imgProfileAndState{
@@ -48,16 +60,16 @@
                 background-color: #FFF9BF;
                 color: rgb(0, 0, 0);
                 border-radius: 40px;
-                width: 133px;
+                width: 188px;
                 height: 45px;
                 padding-right: 40px;
                 padding-left: 15px;
-                margin-top: -5px;
                 margin-left: -145px;
             }
                 .nameUserContacts{
                     width: 60px;
                     font-size: 11px;
+                    margin: 0px;
                 }
                 .editCrud, .deleteCrud, .nameUser{
                     display: flex;

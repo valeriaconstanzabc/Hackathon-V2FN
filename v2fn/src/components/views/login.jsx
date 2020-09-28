@@ -43,6 +43,7 @@ const LogIn = (props) => {
             setEmail('')
             setPass('')
             setError(null)
+            saveInfoProfile()
             props.history.push('/inicio')
         } catch (error) {
             console.log(error)
@@ -70,34 +71,34 @@ const LogIn = (props) => {
 
     return (
         <div className="containerLogIn">
-            <form onSubmit={processData}>
+            <form className="formLogIn" onSubmit={processData}>
+                <img className="logoEYLogIn" src="https://i.ibb.co/gRfBrbG/EY-Logo-Beam-Tag-Stacked-RGB-EN-2.png" alt="logo EY"/>
                 <div className="modalLogIn">
-                    <h1>Iniciar Sesión</h1>
-                    <div className="line"></div>
+                    <h1 className="LogInTittle">Iniciar Sesión</h1>
                 
-                    <label htmlFor="email" className="text"><b>Correo Electrónico</b></label>
+                    <label htmlFor="email" className="textLogIn"><b>Email</b></label>
                     <input 
                         type="text" 
                         className="email_login" 
-                        placeholder="lofche@example.com" 
+                        placeholder="email@example.com" 
                         name="email" 
                         onChange={ e => setEmail(e.target.value) }
                         value={email}
                     />
                 
-                    <label htmlFor="psw" className="text"><b>Contraseña</b></label>
+                    <label htmlFor="psw" className="textLogIn"><b>Contraseña</b></label>
                     <div className="containerPassword">
                         <input 
                             type="password" 
                             id="password_login" 
-                            className="password" 
-                            placeholder="Ingresa Contraseña" 
+                            className="password_login" 
+                            placeholder="**********" 
                             name="password" 
                             autoComplete="on"
                             onChange={ e => setPass(e.target.value) }
                             value={pass}
                         />
-                        <span type="button" className="passwordHidden" onClick={() => hiddenPassword()}><img alt="ojo" src="https://raw.githubusercontent.com/valeriaconstanzabc/SCL013-social-network/master/src/imagenes/ojo.png" className="eyePassword"/></span>
+                        <span type="button" className="passwordHidden" onClick={() => hiddenPassword()}><img alt="ojo" src="https://i.ibb.co/8YyQnYf/Vectorkjkh.png" className="eyePassword"/></span>
                     </div>
                     
                     {error && (<div className="error" id="errorMessage">{error}</div>)}
@@ -106,15 +107,29 @@ const LogIn = (props) => {
                             <img src="https://raw.githubusercontent.com/valeriaconstanzabc/SCL013-social-network/master/src/imagenes/google.png" alt="google" className="social-media-logo" id="google"/>
                         </button>
                     </div>
-                    <div className="buttonNext">
-                        <button type="submit" id="next_button" className="next">Siguiente</button>
+                    <div className="containerInfoNextSingIn">
+                        <div className="buttonNext">
+                            <button type="submit" id="next_button" className="next_button">Continuar</button>
+                        </div>
+                        <div className="containerBtnNextSingIn">
+                            <label>¿No tienes cuenta?</label>
+                            <Link to="/registro">
+                                <label className="registerHere"><b><u>Regístrate aquí</u></b></label>
+                            </Link>
+                        </div>
                     </div>
-                    <label>¿No tienes cuenta?</label>
-                    <Link to="/registro">
-                        <label className="registerHere"><b><u>Regístrate aquí</u></b></label>
-                    </Link>
                 </div>
+                <h6 className="footerLogIn"><u>Privacy Policity</u> and <u>Terms of Service</u></h6>
             </form>
+            <div className="InfoSoftwareLogIn">
+                <h1 className="tittleApp">Nombre Software</h1>
+                <img className="imgApp" src="https://i.ibb.co/dGwpCSs/rafiki.png" alt="imgAPP"/>
+                <p className="definitionApp">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+                Lorem pellentesque hendrerit vitae quis. Massa erat risus amet 
+                phasellus non eget eget. Libero.
+                </p>
+            </div>
         </div>
     )
 }

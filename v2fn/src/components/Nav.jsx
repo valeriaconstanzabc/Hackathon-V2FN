@@ -43,7 +43,7 @@ const Nav = (props) => {
                         <div className="containerImgUserNav2">
                             {
                                 user.photoURL === null ?
-                                <img type ="button" className="imgUserNav" alt="img" src="https://i.ibb.co/RDg954s/usuario-sin-foto.png"/>
+                                <img type ="button" className="imgUserNav" alt="img" src="https://i.ibb.co/yfMZ7D3/Vectorhgh.png"/>
                                 :
                                 <img type ="button" className="imgUserNav" alt="img" src={user.photoURL}/>  
                             }

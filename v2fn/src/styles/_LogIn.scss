@@ -1,0 +1,140 @@
+.containerLogIn{
+    display: flex;
+    width: 100%;
+}
+    .formLogIn{
+        width: 50%;
+        padding: 50px 140px 0px 140px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        align-content: center;
+        height: 100%;
+    }
+        .LogInTittle{
+            font-family: 'Lato', sans-serif;
+            font-size: 30px;
+        }
+        .logoEYLogIn{
+            height: 170px;
+        }
+        .modalLogIn{
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            margin-top: 40px;
+        }
+        .email_login, .containerPassword{
+            border: 2px solid #B3B3B3;
+            box-sizing: border-box;
+            border-radius: 5px;
+            padding: 8px;
+            font-family: 'Lato', sans-serif;
+            margin-bottom: 15px;
+            font-size: 13px;
+        }
+            .eyePassword{
+                height: 15px;
+            }
+            .textLogIn{
+                font-family: 'Lato', sans-serif;
+                font-size: 15px;
+            }
+            .social-media-logo{
+                height: 50px;
+            }
+        .containerPassword{
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+        }
+        .password_login{
+            border: 0px;
+            font-size: 13px;
+        }
+
+        .containerInfoNextSingIn{
+            display: flex;
+        }
+        .containerBtnNextSingIn{
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            text-align: center;
+        }
+        .containerBtnNextSingIn label,
+        .containerBtnNextSingIn a{
+            margin: 0px;
+            font-size: 13px;
+        }
+        .next_button{
+            background: #3B3B46;
+            border-radius: 10px;
+            color: #FAFAFA;
+            width: 190px;
+            height: 45px;
+            border: 0px;
+        }
+        .footerLogIn{
+            margin-top: 90px;
+            margin-left: -370px;
+            font-family: 'Lato', sans-serif;
+            font-size: 12px;
+            color: #A0A0B3;
+        }
+
+
+
+    
+    .InfoSoftwareLogIn{
+        width: 50%;
+        background: #3B3B46;
+        height: 700px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-content: center;
+        align-items: center;
+        padding: 0px 100px 0px 100px;
+        font-family: 'Lato', sans-serif;
+        color: #FAFAFA;
+    }
+    .tittleApp{
+        color: #00AEEF;
+        text-align: center;
+    }
+
+    .imgApp{
+        width: 450px;
+        padding-top: 20px;
+        padding-bottom: 20px;
+    }
+
+/* <---------------------MEDIA QUERY---------------------> */
+@media all and (max-width: 1190px){
+    .containerInfoNextSingIn{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .containerBtnNextSingIn{ margin-top: 10px; }
+    .formLogIn{ padding: 50px 80px 0px 80px; }
+}
+@media all and (max-width: 900px){
+    .imgApp{ width: 350px; }
+}
+@media all and (max-width: 700px){
+    .containerLogIn{ flex-direction: column; }
+    .formLogIn, .InfoSoftwareLogIn{
+        width: 100%;
+        height: 740px;
+    }
+    .footerLogIn{ margin-left: 0px; }
+}
+@media all and (max-width: 390px){
+    .imgApp{ width: 300px; }
+    .formLogIn{ padding: 50px 30px 0px 30px; }
+    .InfoSoftwareLogIn{
+        padding: 0px 40px 0px 40px;
+    }
+}
