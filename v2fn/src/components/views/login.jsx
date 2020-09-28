@@ -1,6 +1,6 @@
 import React from 'react'
 import { withRouter } from 'react-router-dom'
-import { hiddenPassword, observer } from '../Functions.js';
+import { hiddenPassword, observer, saveInfoProfile } from '../Functions.js';
 import { Link } from "react-router-dom";
 import { auth } from '../../firebase.js';
 import firebase from 'firebase/app'
@@ -43,7 +43,7 @@ const LogIn = (props) => {
             setEmail('')
             setPass('')
             setError(null)
-            // props.history.push('/inicio')
+            props.history.push('/inicio')
         } catch (error) {
             console.log(error)
             if (error.code === 'auth/invalid-email') {
@@ -56,12 +56,13 @@ const LogIn = (props) => {
                 setError('* Contraseña incorrecta')
             }
         }
-    }, [email, pass ])
+    }, [email, pass, props.history ])
  
     const loginWithGoogle = () => {
         const provider = new firebase.auth.GoogleAuthProvider();
         firebase.auth().signInWithPopup(provider)
         .then(() => {
+            saveInfoProfile()
             observer()
         }).catch(() => {
         });
