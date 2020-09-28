@@ -218,6 +218,31 @@
 div#root {
   display: flex; }
 
+.row.containerMenu {
+  background: #3B3B46;
+  margin-right: 20px; }
+
+.nav-link {
+  color: #fff; }
+
+.containerMenu a {
+  color: #fff; }
+
+.nav-pills .nav-link.active, .nav-pills .show > .nav-link {
+  color: #000;
+  background: #FFF280;
+  margin-right: -25px;
+  border-radius: 0 20px 20px 0; }
+
+.logo-nav {
+  padding: .5rem 1rem; }
+
+.nav-pills .nav-link.active .txt-navlink {
+  display: block; }
+
+p.txt-navlink {
+  display: none; }
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
