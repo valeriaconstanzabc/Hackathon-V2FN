@@ -1,7 +1,7 @@
 import React from 'react'
 import { withRouter } from 'react-router-dom'
-import { hiddenPassword, observer } from '../Functions.js';
-import { auth } from '../../firebase.js'
+import { hiddenPassword, observer, saveInfoProfile } from '../Functions.js';
+import { auth,db } from '../../firebase.js'
 import firebase from 'firebase/app'
 
 const SignIn = (props) => {
@@ -10,6 +10,11 @@ const SignIn = (props) => {
     const [email, setEmail] = React.useState('')
     const [pass, setPass] = React.useState('')
     const [error, setError] = React.useState(null)
+    const userr = auth.currentUser;
+
+    if(userr) {
+        props.history.push('/inicio')
+    }
 
     const processData = e => {
         e.preventDefault()
@@ -32,7 +37,7 @@ const SignIn = (props) => {
         console.log('Pasando todas las validaciones')
         setError(null)
         register()
-        // props.history.push('/verificacion')
+        props.history.push('/inicio')
     }
 
     const register = React.useCallback(async () => {
@@ -40,6 +45,13 @@ const SignIn = (props) => {
             const res = await auth.createUserWithEmailAndPassword(email, pass)
             await res.user.updateProfile({
                 displayName: name,
+            })
+            await db.collection('usuarios').doc(userr.uid).add({
+                photoURL: null,
+                name: userr.displayName,
+                email: userr.email,
+                uid: userr.uid,
+                state: true
             })
             setName('')
             setEmail('')
@@ -63,10 +75,27 @@ const SignIn = (props) => {
         const provider = new firebase.auth.GoogleAuthProvider();
         firebase.auth().signInWithPopup(provider)
         .then(() => {
+            saveInfoProfile()
             observer()
         }).catch(() => {
         });
     }
+
+    // const saveInfoProfile = async () => {
+    //     const user = auth.currentUser;
+    //     const db = firebase.firestore()
+    //     try {
+    //       await db.collection('usuarios').doc().set({
+    //         photoURL: null,
+    //         name: user.displayName,
+    //         email: user.email,
+    //         uid: user.uid,
+    //         state: true
+    //       })
+    //     } catch (error) { 
+    //       console.log(error) 
+    //     }
+    // }
 
     return (
         <div className="containerSignIn">
