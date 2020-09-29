@@ -16,6 +16,7 @@ const useStyle = makeStyles((theme)=>({
 }));
 export default function List({ list }) {
     const classes = useStyle();
+    console.log(list.title)
     return (
         <div>
             <Paper className= {classes.root}>
@@ -24,7 +25,7 @@ export default function List({ list }) {
                 {list.cards.map((card)=>(
                     <Card key={card.id} card={card}/>
                 ))}
-                <InputContainer />
+                <InputContainer listId={list.id} type="card"/>
             </Paper>
             
         </div>
