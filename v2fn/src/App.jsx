@@ -6,7 +6,7 @@ import {
 } from "react-router-dom";
 import { auth } from '../src/firebase.js'
 import LogIn from './components/views/LogIn.jsx';
-import List from './components/list/List.jsx';
+import List from './components/List/List.jsx';
 import store from './utils/store';
 import StoreApi from './utils/storeApi'
 import { v4 as uuid } from 'uuid'
@@ -16,14 +16,16 @@ import Menu from './components/views/menu.jsx';
 import Contacts from './components/Contacts.jsx';
 import Nav from './components/Nav.jsx';
 import SignIn from './components/views/SignIn.jsx'
+import { DragDropContext, Droppable } from 'react-beautiful-dnd';
+import Welcome from './components/Welcome.jsx';
 
 const useStyle = makeStyles((theme) => ({
   root: {
     display: 'flex',
     minHeight: '100vh',
     background: '#FEFAEE',
-    width: '100%',
-    padding: '160px 0px 0px 110px'
+    width: '12000px',
+    padding: '160px 0px 0px 110px',
   },
 
 }))
@@ -48,7 +50,7 @@ function App() {
     };
 
     const list = data.lists[listId];
-    list.cards = [...list.cards, newCard]
+    list.cards = [...list.cards, newCard];
 
     const newState = {
       ...data,
@@ -70,7 +72,7 @@ function App() {
     const newState = {
       listIds: [...data.listIds, newListId],
       lists: {
-        ...data.list,
+        ...data.lists,
         [newListId]: newList
       },
     };
@@ -101,6 +103,53 @@ function App() {
     })
   }, [])
 
+  const onDragEnd = (result) => {
+    const { destination, source, draggableId, type } = result;
+
+    if(!destination){
+      return;
+    }
+
+    if(type === 'list'){
+      const newListIds = data.listIds;
+      newListIds.splice(source.index, 1);
+      newListIds.splice(destination.index, 0, draggableId);
+      return;
+    }
+
+    const sourceList = data.lists[source.droppableId];
+    const destinationList = data.lists[destination.droppableId];
+    const draggingCard = sourceList.cards.filter(
+      (card) => card.id === draggableId
+    )[0];
+
+    if(source.droppableId === destination.droppableId){
+      sourceList.cards.splice(source.index, 1);
+      destinationList.cards.splice(destination.index, 0, draggingCard);
+      const newSate={
+        ...data,
+        lists:{
+          ...data.lists,
+          [sourceList.id]: destinationList,
+        },
+      };
+      setData(newSate);
+    }else{
+      sourceList.cards.splice(source.index, 1);
+      destinationList.cards.splice(destination.index, 0, draggingCard);
+
+      const newState = {
+        ...data,
+        lists:{
+          ...data.lists,
+          [sourceList.id]: sourceList,
+          [destinationList.id]: destinationList,
+        },
+      };
+      setData(newState);
+    }
+  };
+
   return firebaseUser !== false ? (
     <StoreApi.Provider value={{ addMoreCard, addMoreList, updateListTitle }}>
       <Router>
@@ -115,19 +164,31 @@ function App() {
           </Route>
 
           <Route path="/inicio">
+            <Welcome />
             <Nav />
             <Contacts />
             <Menu />
           </Route>
 
           <Route path="/board">
-            <div className={classes.root}>
-              {data.listIds.map((listId) => {
+            <DragDropContext onDragEnd={onDragEnd}>
+              <Droppable droppableId='app' type='list' direction='horizontal'>
+                {(provided)=> ( 
+            <div 
+            className={classes.root}
+            ref={provided.innerRef}
+            {...provided.droppableProps}
+            >
+              {data.listIds.map((listId, index) => {
                 const list = data.lists[listId];
-                return <List list={list} key={listId} />
+                return <List list={list} key={listId} iindex={index}/>
               })}
               <InputContainer type="list" />
+              {provided.placeholder}
             </div>
+            )}
+            </Droppable>
+            </DragDropContext>
             <Nav />
             <Contacts />
             <Menu />

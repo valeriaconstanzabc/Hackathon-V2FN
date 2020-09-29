@@ -1,0 +1,77 @@
+.containerWelcome{
+    position: relative;
+    width: 15000px;
+    margin: 70px 20px 20px 130px;
+    display: flex;
+}
+    .containerOneWelcome{
+        display: flex;
+        flex-direction: column;
+        width: 90%;
+    }
+    .containerOneWelcome-fila1{
+        display: flex;
+    }
+        .tareaEnCurso{
+            width: 100%;
+            filter: drop-shadow(0px 4px 16px rgba(0, 0, 0, 0.25))
+        }
+        .color1{
+            width: 100%;
+            filter: drop-shadow(0px 4px 16px rgba(0, 0, 0, 0.25))
+        }
+        .uno{
+            margin: 10px;
+        }
+        .dos{
+            margin: 10px;
+        }
+        .tres{
+            margin: 10px;
+        }
+        .cuatro{
+            margin: 10px;
+        }
+    .productividadSemanal{
+        width: 100%;
+        filter: drop-shadow(0px 4px 16px rgba(0, 0, 0, 0.25))
+    }
+    .containerOneWelcome-fila2{
+        display: flex;
+        margin: 10px;
+    }
+    .containerOneWelcome-fila3{
+        display: flex;
+        margin: 10px;
+    }
+    .color3{
+        width: 100%;
+        filter: drop-shadow(0px 4px 16px rgba(0, 0, 0, 0.25))
+    }
+    .color2{
+        width: 100%;
+        filter: drop-shadow(0px 4px 16px rgba(0, 0, 0, 0.25))
+    }
+    .containerTwoWelcome{
+        width: 40%;
+        display: flex;
+        flex-direction: column;
+    }
+    .reuniones{
+        width: 100%;
+        filter: drop-shadow(0px 4px 16px rgba(0, 0, 0, 0.25))
+    }
+
+/* <---------------------MEDIA QUERY---------------------> */
+@media all and (max-width: 1000px){
+    .containerWelcome{ flex-direction: column; }
+    .containerTwoWelcome{
+        width: 100%;
+        flex-direction: row;
+    }
+    .containerOneWelcome{ width: 100%; }
+}
+@media all and (max-width: 750px){
+    .containerOneWelcome-fila1{ flex-direction: column; }
+    .containerTwoWelcome{ flex-direction: column; }
+}
