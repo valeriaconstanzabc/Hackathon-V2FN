@@ -15,14 +15,15 @@ import { makeStyles } from '@material-ui/core/styles'
 import Menu from './components/views/menu.jsx';
 import Contacts from './components/Contacts.jsx';
 import Nav from './components/Nav.jsx';
+import SignIn from './components/views/SignIn.jsx'
 
-//import SignIn from './components/view{s/SignIn.jsx';
 const useStyle = makeStyles((theme) => ({
   root: {
     display: 'flex',
     minHeight: '100vh',
-    background: 'red',
-
+    background: '#FEFAEE',
+    width: '100%',
+    padding: '160px 0px 0px 110px'
   },
 
 }))
@@ -110,7 +111,7 @@ function App() {
           </Route>
 
           <Route path="/registro">
-            {/* <SignIn /> */}
+            <SignIn />
           </Route>
 
           <Route path="/inicio">
@@ -120,9 +121,6 @@ function App() {
           </Route>
 
           <Route path="/board">
-            <Nav />
-            <Contacts />
-            <Menu />
             <div className={classes.root}>
               {data.listIds.map((listId) => {
                 const list = data.lists[listId];
@@ -130,7 +128,9 @@ function App() {
               })}
               <InputContainer type="list" />
             </div>
-
+            <Nav />
+            <Contacts />
+            <Menu />
           </Route>
 
         </Switch>
