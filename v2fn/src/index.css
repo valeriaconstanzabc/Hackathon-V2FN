@@ -235,10 +235,12 @@ div#root {
   position: fixed;
   background: #3B3B46;
   margin-right: 20px;
-  height: 900px; }
+  height: 900px;
+  width: 100px; }
 
 .nav-link {
-  color: #fff; }
+  color: #fff;
+  padding: 1rem 1rem 1rem 1.5rem; }
 
 .containerMenu a {
   color: #fff; }
@@ -246,8 +248,10 @@ div#root {
 .nav-pills .nav-link.active, .nav-pills .show > .nav-link {
   color: #000;
   background: #FFF280;
-  margin-right: -25px;
-  border-radius: 0 20px 20px 0; }
+  border-radius: 0 20px 20px 0;
+  display: flex;
+  width: 115px;
+  padding: 10px 0px 10px 4px; }
 
 .logo-nav {
   padding: .5rem 1rem; }
@@ -256,7 +260,30 @@ div#root {
   display: block; }
 
 p.txt-navlink {
-  display: none; }
+  display: none;
+  margin: 0px;
+  padding: 0px;
+  font-weight: 700;
+  line-height: 30px;
+  font-size: 15px; }
+
+.imgIconMenu {
+  height: 35px;
+  width: auto; }
+
+.imgIconMenu {
+  height: 40px; }
+
+.nav-pills .nav-link.active .imgIconMenu {
+  width: 25px;
+  height: 25px;
+  margin: 0px 2px 0px 0px; }
+
+.nav.flex-column.container-states {
+  margin-top: 130px; }
+
+.nav-states {
+  padding: 0.5rem 1.3rem; }
 
 .containerLogIn {
   display: flex;
