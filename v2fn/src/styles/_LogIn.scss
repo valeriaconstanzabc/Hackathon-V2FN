@@ -55,12 +55,14 @@
 
         .containerInfoNextSingIn{
             display: flex;
+            justify-content: space-between;
         }
         .containerBtnNextSingIn{
             display: flex;
             flex-direction: column;
             width: 100%;
             text-align: center;
+            margin-top: 20px;
         }
         .containerBtnNextSingIn label,
         .containerBtnNextSingIn a{
@@ -82,7 +84,20 @@
             font-size: 12px;
             color: #A0A0B3;
         }
-
+        .registerWith{
+            margin: 0px;
+            font-size: 13px;
+            display: flex;
+            align-items: center;
+        }
+        .btngoogle{
+            background: transparent;
+            border: 0px;
+            cursor: pointer;
+        }
+        .social-media-logo{
+            height: 35px;
+        }
 
 
     
@@ -119,6 +134,7 @@
     }
     .containerBtnNextSingIn{ margin-top: 10px; }
     .formLogIn{ padding: 50px 80px 0px 80px; }
+    .registerWith{ margin-top: 20px; }
 }
 @media all and (max-width: 900px){
     .imgApp{ width: 350px; }

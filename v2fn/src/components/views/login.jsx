@@ -102,21 +102,22 @@ const LogIn = (props) => {
                     </div>
                     
                     {error && (<div className="error" id="errorMessage">{error}</div>)}
-                    <div className="registerWith">
-                        <button type="submit" className="btngoogle" onClick={() => loginWithGoogle()}>
-                            <img src="https://raw.githubusercontent.com/valeriaconstanzabc/SCL013-social-network/master/src/imagenes/google.png" alt="google" className="social-media-logo" id="google"/>
-                        </button>
-                    </div>
                     <div className="containerInfoNextSingIn">
                         <div className="buttonNext">
                             <button type="submit" id="next_button" className="next_button">Continuar</button>
                         </div>
-                        <div className="containerBtnNextSingIn">
-                            <label>¿No tienes cuenta?</label>
-                            <Link to="/registro">
-                                <label className="registerHere"><b><u>Regístrate aquí</u></b></label>
-                            </Link>
+                        <div className="registerWith">
+                            <button type="submit" className="btngoogle" onClick={() => loginWithGoogle()}>
+                                <img src="https://raw.githubusercontent.com/valeriaconstanzabc/SCL013-social-network/master/src/imagenes/google.png" alt="google" className="social-media-logo" id="google"/>
+                            </button>
+                            <label className="googleNext" onClick={() => loginWithGoogle()}><b><u>Continuar con google</u></b></label>
                         </div>
+                    </div>
+                    <div className="containerBtnNextSingIn">
+                        <label>¿No tienes cuenta?</label>
+                        <Link to="/registro">
+                            <label className="registerHere"><b><u>Regístrate aquí</u></b></label>
+                        </Link>
                     </div>
                 </div>
                 <h6 className="footerLogIn"><u>Privacy Policity</u> and <u>Terms of Service</u></h6>
