@@ -1,9 +1,9 @@
 .containerContacts {
   display: flex;
-  position: fixed;
   width: 100%;
   margin-top: 80px;
   padding-right: 50px;
+  margin-bottom: 30px;
   box-sizing: border-box;
   justify-content: flex-end; }
 
