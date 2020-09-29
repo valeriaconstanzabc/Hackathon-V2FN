@@ -17,14 +17,15 @@ import Contacts from './components/Contacts.jsx';
 import Nav from './components/Nav.jsx';
 import SignIn from './components/views/SignIn.jsx'
 import { DragDropContext, Droppable } from 'react-beautiful-dnd';
+import Welcome from './components/Welcome.jsx';
 
 const useStyle = makeStyles((theme) => ({
   root: {
     display: 'flex',
     minHeight: '100vh',
     background: '#FEFAEE',
-    width: '100%',
-    padding: '160px 0px 0px 110px'
+    width: '12000px',
+    padding: '160px 0px 0px 110px',
   },
 
 }))
@@ -163,6 +164,7 @@ function App() {
           </Route>
 
           <Route path="/inicio">
+            <Welcome />
             <Nav />
             <Contacts />
             <Menu />

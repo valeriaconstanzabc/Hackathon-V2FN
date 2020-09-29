@@ -1,11 +1,12 @@
 .containerContacts{
     display: flex;
     width: 100%;
-    margin-top: 80px;
+    padding-top: 80px;
     padding-right: 50px;
-    margin-bottom: 30px;
+    padding-bottom: 30px;
     box-sizing: border-box;
     justify-content: flex-end;
+background: #FEFAEE;
 }
     .containerColorContacts{
         background: #FFFFFF;
@@ -28,7 +29,7 @@
             margin-bottom: 10px;
         }
         .estadoOffline{
-            position: fixed;
+            position: absolute;
             background: #FF0000;
             border-radius: 5px;
             width: 8px;
@@ -37,16 +38,13 @@
             margin-left: 28px;
         }
         .estadoOnline{
-            position: fixed;
+            position: absolute;
             background: #2FCD36;
             border-radius: 5px;
             width: 8px;
             height: 8px;
             margin-top: -8px;
             margin-left: 28px;
-        }
-        .imgProfileAndState{
-            z-index: 1;
         }
             .btnHeaderOptions{
                 width: 100%;
@@ -90,4 +88,9 @@
                     }
                     .containerContactUser:hover .dropdownContentEdit {
                         display: block;
+                    }
+
+                    .makeStyles-root-1{
+                        flex-wrap: wrap;
+                        justify-content: space-around;
                     }
