@@ -41,7 +41,7 @@ export const notifications = () => {
   if( hour >= 16 && hour < 17 ){
       toast("¿Hz tomado agua? este sería un buen momento para hidratar tu cuerpo")
   }
-  if( hour >= 17 && hour < 18 ){
+  if( hour >= 19 && hour < 22 ){
       toast("Ya es hora de irse! Descansa y desconecta la mente")
   }
   if( hour >= 20 && hour < 21 ){
