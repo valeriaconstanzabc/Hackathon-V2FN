@@ -36,7 +36,7 @@ export const notifications = () => {
       toast("¿Ya viste el gran premio? mientras más interacciones hagas, más cerca estarás de él!!!")
   }
   if( hour >= 14 && hour < 16 ){
-      toast("Recuerda tomarte un breack! Despeja tu mente y estira las piernas")
+      toast("Recuerda tomar un breack! Despeja tu mente y estira las piernas")
   }
   if( hour >= 16 && hour < 17 ){
       toast("¿Hz tomado agua? este sería un buen momento para hidratar tu cuerpo")
@@ -47,6 +47,10 @@ export const notifications = () => {
   if( hour >= 20 && hour < 21 ){
       toast("¿Tú por aquí? Es momento de descansar!")
   }
+}
+
+export const activeNotification = () => {
+  notifications()
 }
 
 export const saveInfoProfile = async () => {

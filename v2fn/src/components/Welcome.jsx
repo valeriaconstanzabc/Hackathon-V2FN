@@ -1,10 +1,24 @@
 import React from 'react'
 import { Link } from "react-router-dom";
+import { ToastContainer } from 'react-toastify';
+import { activeNotification } from '../components/Functions.js'
 
 export const Welcome = () => {
     return (
         <div className="containerWelcome">
             <div className="containerOneWelcome">
+                <ToastContainer
+                    className="hdk9ldvk93"
+                    position="top-right"
+                    autoClose={5000}
+                    hideProgressBar={false}
+                    newestOnTop={false}
+                    closeOnClick
+                    rtl={false}
+                    pauseOnFocusLoss
+                    draggable
+                    pauseOnHover
+                />
                 <div className="containerOneWelcome-fila1">
                     <div className="uno">
                         <Link to="/board">
@@ -12,7 +26,7 @@ export const Welcome = () => {
                         </Link>
                     </div>
                     <div className="dos">
-                        <img className="color1" src="https://i.ibb.co/sF5t3xN/Group-105.png" alt="tarea en curso"/>
+                        <img onClick={() => activeNotification() } className="color1" src="https://i.ibb.co/sF5t3xN/Group-105.png" alt="tarea en curso"/>
                         {/* <div className="color1"></div> */}
                     </div>
                 </div>
