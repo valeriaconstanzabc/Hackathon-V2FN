@@ -1,0 +1,26 @@
+.containerTittleBoard{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+    .containerTittleBoardFila1{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .BtnsBoard{
+        display: flex;
+    }
+    .tittleBoard h1{
+        font-size: 60px;
+    }
+    .btnBoard{
+        margin: 0px 7px 0px 7px;
+        font-size: 16px;
+        color: #2E2E38;
+    }
+    .containerTittleBoardFila1 h4{
+        font-size: 20px;
+        margin: 0;
+        color: #2E2E38;
+    }
