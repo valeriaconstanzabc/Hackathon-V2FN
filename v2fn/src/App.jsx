@@ -106,11 +106,11 @@ function App() {
   const onDragEnd = (result) => {
     const { destination, source, draggableId, type } = result;
 
-    if(!destination){
+    if (!destination) {
       return;
     }
 
-    if(type === 'list'){
+    if (type === 'list') {
       const newListIds = data.listIds;
       newListIds.splice(source.index, 1);
       newListIds.splice(destination.index, 0, draggableId);
@@ -123,24 +123,24 @@ function App() {
       (card) => card.id === draggableId
     )[0];
 
-    if(source.droppableId === destination.droppableId){
+    if (source.droppableId === destination.droppableId) {
       sourceList.cards.splice(source.index, 1);
       destinationList.cards.splice(destination.index, 0, draggingCard);
-      const newSate={
+      const newSate = {
         ...data,
-        lists:{
+        lists: {
           ...data.lists,
           [sourceList.id]: destinationList,
         },
       };
       setData(newSate);
-    }else{
+    } else {
       sourceList.cards.splice(source.index, 1);
       destinationList.cards.splice(destination.index, 0, draggingCard);
 
       const newState = {
         ...data,
-        lists:{
+        lists: {
           ...data.lists,
           [sourceList.id]: sourceList,
           [destinationList.id]: destinationList,
@@ -173,21 +173,28 @@ function App() {
           <Route path="/board">
             <DragDropContext onDragEnd={onDragEnd}>
               <Droppable droppableId='app' type='list' direction='horizontal'>
-                {(provided)=> ( 
-            <div 
-            className={classes.root}
-            ref={provided.innerRef}
-            {...provided.droppableProps}
-            >
-              {data.listIds.map((listId, index) => {
-                const list = data.lists[listId];
-                return <List list={list} key={listId} iindex={index}/>
-              })}
-              <InputContainer type="list" />
-              {provided.placeholder}
-            </div>
-            )}
-            </Droppable>
+                {(provided) => (
+                  <div
+                    className={classes.root}
+                    ref={provided.innerRef}
+                    {...provided.droppableProps}
+                  >
+                    <h1>App de System C.</h1>
+                    <h4>Aplicación para medir la productividad de los equipos</h4>
+                    <div>
+                    <h5>Mi tablero</h5>
+                    <h5>Archivos</h5>
+                    <h5>Avance equipo</h5>
+                    </div>
+                    {data.listIds.map((listId, index) => {
+                      const list = data.lists[listId];
+                      return <List list={list} key={listId} iindex={index} />
+                    })}
+                    <InputContainer type="list" />
+                    {provided.placeholder}
+                  </div>
+                )}
+              </Droppable>
             </DragDropContext>
             <Nav />
             <Contacts />

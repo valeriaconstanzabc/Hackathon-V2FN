@@ -1,5 +1,5 @@
 import React from 'react';
-import useModal from 'ract-hooks-use-modal';
+import useModal from 'react-hooks-use-modal';
 
 export const ModalWC = () => {
 
