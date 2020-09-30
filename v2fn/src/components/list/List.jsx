@@ -10,11 +10,16 @@ import { Draggable, Droppable } from 'react-beautiful-dnd';
 const useStyle = makeStyles((theme) => ({
     root: {
         width: '300px',
-        backgroundColor: '#EBECF0',
+        background: 'rgba(160, 160, 179, 0.2)',
         marginLeft: theme.spacing(1),
+        fontSize: '18px',
+
+        
     },
     cardContainer:{
         marginTop:theme.spacing(4),
+
+        
 
     }
 
