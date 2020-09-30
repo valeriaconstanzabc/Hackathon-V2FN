@@ -553,6 +553,49 @@ p.txt-navlink {
   margin: 0;
   color: #2E2E38; }
 
+.containerModal {
+  background: #FFFFFF;
+  border-radius: 20px;
+  width: 600px;
+  height: 500px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; }
+
+.tittleModal h3 {
+  color: #00AEEF;
+  font-size: 40px;
+  line-height: 68px; }
+
+.tittleModalBreak h3 {
+  color: #AA6F3A;
+  font-size: 40px;
+  line-height: 68px; }
+
+.tittleModalMeeting h3 {
+  color: #9241BD;
+  font-size: 40px;
+  line-height: 68px; }
+
+.tittleModalLunch h3 {
+  color: #27AE60;
+  font-size: 40px;
+  line-height: 68px; }
+
+.imgWC {
+  height: 280px;
+  margin-top: 20px; }
+
+.btnModalVolver {
+  width: 450px;
+  height: 35px;
+  background: #3B3B46;
+  border-radius: 10px;
+  color: #FFFFFF;
+  border: 0;
+  margin-top: 30px; }
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;

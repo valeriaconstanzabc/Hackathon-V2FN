@@ -1,7 +1,7 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
 import { Link } from "react-router-dom";
-import { ModalWC } from './modalWC.jsx';
+import { ModalWC, ModalBreak, ModalMeeting, ModalLunch } from './modalWC.jsx';
 
 const Menu = (props) => {
 
@@ -32,13 +32,13 @@ return (
         {<ModalWC />}
       </a>
       <a className="nav-link nav-states" data-toggle="pill" href="#v-pills-home" role="tab" aria-controls="v-pills-home" aria-selected="true">
-        <img className="imgIconMenu" id="stateMeet" src="https://i.ibb.co/CB9Gdxf/Icon-Circle-Meet.png"/>
+        {<ModalMeeting />}
       </a>
       <a className="nav-link nav-states" data-toggle="pill" href="#v-pills-home" role="tab" aria-controls="v-pills-home" aria-selected="true">
-        <img className="imgIconMenu" id="stateLunch" src="https://i.ibb.co/7tmC1Rq/Icon-Circle-Lunch.png"/>
+        {<ModalLunch />}
       </a>
       <a className="nav-link nav-states" data-toggle="pill" href="#v-pills-home" role="tab" aria-controls="v-pills-home" aria-selected="true">
-        <img className="imgIconMenu" id="stateBreak" src="https://i.ibb.co/VxZ7GR9/Icon-Circle-break.png"/>
+        {<ModalBreak />}
       </a>
     </div>
   </div>
