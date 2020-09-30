@@ -25,7 +25,7 @@ const useStyle = makeStyles((theme) => ({
     minHeight: '100vh',
     background: '#FEFAEE',
     width: '12000px',
-    padding: '160px 0px 0px 110px',
+    padding: '90px 0px 0px 120px',
   },
 
 }))
@@ -179,12 +179,20 @@ function App() {
                     ref={provided.innerRef}
                     {...provided.droppableProps}
                   >
-                    <h1>App de System C.</h1>
-                    <h4>Aplicación para medir la productividad de los equipos</h4>
-                    <div>
-                    <h5>Mi tablero</h5>
-                    <h5>Archivos</h5>
-                    <h5>Avance equipo</h5>
+                    <div className="containerTittleBoard">
+                      <div className="containerTittleBoardFila1">
+                        <div className="tittleBoard">
+                          <h1>App de System C.</h1>
+                        </div>
+                        <div className="BtnsBoard">
+                          <h5 className="btnBoard">Mi tablero</h5>
+                          <h5 className="btnBoard">Archivos</h5>
+                          <h5 className="btnBoard">Avance equipo</h5>
+                        </div>
+                      </div>
+                      <div className="containerTittleBoardFila1">
+                        <h4>Aplicación para medir la productividad de los equipos</h4>
+                      </div>
                     </div>
                     {data.listIds.map((listId, index) => {
                       const list = data.lists[listId];
