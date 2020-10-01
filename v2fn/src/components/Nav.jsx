@@ -2,11 +2,10 @@ import React, { useContext } from 'react'
 import { auth, db } from '../firebase.js';
 import { withRouter } from "react-router-dom";
 import { UserContext } from '../components/context/UserContext.js'
-import firebase from 'firebase/app'
 
 const Nav = (props) => {
     const user = auth.currentUser;
-    let { setSuma, suma } = useContext(UserContext)
+    let { setSuma } = useContext(UserContext)
     const [ sumafirebase, setSumafirebase ] = React.useState([])
 
     const cerrarSesion = () => {
@@ -36,7 +35,7 @@ const Nav = (props) => {
             await db.collection('sumaPuntos').onSnapshot(
               (snap => {
                 const arrayData = snap.docs.map(doc => ({id: doc.id, ...doc.data()}))
-                const userPresent = arrayData.filter( item => item.email == user.email)
+                const userPresent = arrayData.filter( item => item.email === user.email)
 
                 setSumafirebase(userPresent) 
               }))

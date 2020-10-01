@@ -2,8 +2,6 @@ import React, { useContext } from 'react';
 import useModal from 'react-hooks-use-modal';
 import { UserContext } from '../context/UserContext.js'
 import { pointsNotifications } from '../Functions.js'
-import ConfettiCanvas from 'react-confetti-canvas';
-
 
 export const ModalWC = () => {
 
@@ -22,7 +20,6 @@ export const ModalWC = () => {
     <div>
         <img onClick={open} className="imgIconMenu" id="stateWC" src="https://i.ibb.co/98qr1dv/Icon-Circle-WC.png"/>   
         <Modal>
-        <ConfettiCanvas />
           <div className="containerModal">
             <div className="tittleModal">
               <h3><u>En el baño</u></h3>
