@@ -1,9 +1,13 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { auth, db } from '../firebase.js';
 import { withRouter } from "react-router-dom";
+import { UserContext } from '../components/context/UserContext.js'
+import firebase from 'firebase/app'
 
 const Nav = (props) => {
     const user = auth.currentUser;
+    let { setSuma, suma } = useContext(UserContext)
+    const [ sumafirebase, setSumafirebase ] = React.useState([])
 
     const cerrarSesion = () => {
         auth.signOut()
@@ -26,6 +30,24 @@ const Nav = (props) => {
         }
       }
 
+      React.useEffect(() => {
+        const sumaa = async () => {
+          try {
+            await db.collection('sumaPuntos').onSnapshot(
+              (snap => {
+                const arrayData = snap.docs.map(doc => ({id: doc.id, ...doc.data()}))
+                const userPresent = arrayData.filter( item => item.email == user.email)
+
+                setSumafirebase(userPresent) 
+              }))
+          } catch (error) {
+              console.log(error)
+          }
+      }
+
+        sumaa()
+    }, [ setSuma])
+
     return (
         <div className="containerColorNav">
             <div className="containerTwoNav">
@@ -47,10 +69,14 @@ const Nav = (props) => {
                                 :
                                 <img type ="button" className="imgUserNav" alt="img" src={user.photoURL}/>  
                             }
-                            <div className="containerNameAndPoints">
-                                <h5 className="nameNav">{user.displayName}</h5>
-                                <p className="pointsNav">Nivel 1 - {user.suma} pts.</p>
-                            </div>
+                            {
+                                sumafirebase.map((item, index) => (
+                                    <div key={index} className="containerNameAndPoints">
+                                        <h5 className="nameNav">{user.displayName}</h5>
+                                        <p className="pointsNav">Nivel 1 - {item.puntaje} pts.</p>
+                                    </div>
+                                ))
+                            }
                         </div>
                         <div className="containerSignOutUserNav">
                             <button className="btnNav"><img className="imgNav" src="https://i.ibb.co/ts5QJbd/Vector-2.png" alt=""/></button>

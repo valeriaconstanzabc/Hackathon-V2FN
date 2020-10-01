@@ -1,11 +1,18 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import useModal from 'react-hooks-use-modal';
+import { UserContext } from '../context/UserContext.js'
+
 
 export const ModalWC = () => {
 
   const [Modal, open, close] = useModal('root', {
     preventScroll:true 
   });
+  let { sumadepuntosboton1 } = useContext(UserContext)
+    const closee = () => {
+      sumadepuntosboton1()
+      close()
+    }
 
   return (
     <div>
@@ -19,9 +26,8 @@ export const ModalWC = () => {
               <img className="imgWC" src="https://i.ibb.co/HKHGL07/rafiki.png" alt=""/>
             </div>
             <div className="containerBtnVolver">
-              <button className="btnModalVolver">¡He vuelto!</button>
+              <button className="btnModalVolver" onClick={() => closee()}>¡He vuelto!</button>
             </div>
-
           </div>
         </Modal>
     </div>
@@ -33,6 +39,13 @@ export const ModalMeeting = () => {
   const [Modal, open, close] = useModal('root', {
     preventScroll:true 
   });
+
+  let { sumadepuntosboton1 } = useContext(UserContext)
+
+  const closee = () => {
+    sumadepuntosboton1()
+    close()
+  }
 
   return (
     <div>
@@ -46,7 +59,7 @@ export const ModalMeeting = () => {
               <img className="imgWC" src="https://i.ibb.co/cx55Y44/amico.png" alt=""/>
             </div>
             <div className="containerBtnVolver">
-              <button className="btnModalVolver">¡He vuelto!</button>
+              <button className="btnModalVolver" onClick={() => closee()}>¡He vuelto!</button>
             </div>
 
           </div>
@@ -61,6 +74,13 @@ export const ModalLunch = () => {
     preventScroll:true 
   });
 
+  let { sumadepuntosboton1 } = useContext(UserContext)
+
+  const closee = () => {
+    sumadepuntosboton1()
+    close()
+  }
+
   return (
     <div>
         <img onClick={open} className="imgIconMenu" id="stateWC" src="https://i.ibb.co/7tmC1Rq/Icon-Circle-Lunch.png"/>   
@@ -73,7 +93,7 @@ export const ModalLunch = () => {
               <img className="imgWC" src="https://i.ibb.co/TM0PPCC/panaj.png" alt=""/>
             </div>
             <div className="containerBtnVolver">
-              <button className="btnModalVolver">¡He vuelto!</button>
+              <button className="btnModalVolver" onClick={() => closee()}>¡He vuelto!</button>
             </div>
 
           </div>
@@ -88,6 +108,13 @@ export const ModalBreak = () => {
     preventScroll:true 
   });
 
+  let { sumadepuntosboton1 } = useContext(UserContext)
+
+  const closee = () => {
+    sumadepuntosboton1()
+    close()
+  }
+
   return (
     <div>
         <img onClick={open} className="imgIconMenu" id="stateWC" src="https://i.ibb.co/VxZ7GR9/Icon-Circle-break.png"/>   
@@ -100,7 +127,7 @@ export const ModalBreak = () => {
               <img className="imgWC" src="https://i.ibb.co/54W53gW/dsdsfd.png" alt=""/>
             </div>
             <div className="containerBtnVolver">
-              <button className="btnModalVolver">¡He vuelto!</button>
+              <button className="btnModalVolver" onClick={() => closee()}>¡He vuelto!</button>
             </div>
 
           </div>
