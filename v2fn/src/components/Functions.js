@@ -32,6 +32,12 @@ export const notifications = () => {
   if( hour >= 8 && hour < 9 ){
       toast("Buenas Días! Recuerda partir el día organizando tus metas")
   }
+  if( hour >= 9 && hour < 10 ){
+    toast("¿Como vas con el proyecto? tanquiilo! tu puedes!")
+}
+  if( hour >= 10 && hour < 11 ){
+    toast("¿Haz tomado agua? este sería un buen momento para hidratar tu cuerpo")
+  }
   if( hour >= 11 && hour < 13 ){
       toast("¿Ya viste el gran premio? mientras más interacciones hagas, más cerca estarás de él!!!")
   }
@@ -39,8 +45,11 @@ export const notifications = () => {
       toast("Recuerda tomar un breack! Despeja tu mente y estira las piernas")
   }
   if( hour >= 16 && hour < 17 ){
-      toast("¿Hz tomado agua? este sería un buen momento para hidratar tu cuerpo")
+      toast("¿Haz tomado agua? este sería un buen momento para hidratar tu cuerpo")
   }
+  if( hour >= 17 && hour < 19 ){
+    toast("Recuerda tomar un breack! Despeja tu mente y estira las piernas")
+}
   if( hour >= 19 && hour < 22 ){
       toast("Ya es hora de irse! Descansa y desconecta la mente")
   }
