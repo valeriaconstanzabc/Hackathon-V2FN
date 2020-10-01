@@ -2,6 +2,7 @@ import React, { useContext } from 'react';
 import useModal from 'react-hooks-use-modal';
 import { UserContext } from '../context/UserContext.js'
 import { pointsNotifications } from '../Functions.js'
+import ConfettiCanvas from 'react-confetti-canvas';
 
 
 export const ModalWC = () => {
@@ -14,12 +15,14 @@ export const ModalWC = () => {
       sumadepuntosboton1()
       close()
       pointsNotifications()
+      
     }
 
   return (
     <div>
         <img onClick={open} className="imgIconMenu" id="stateWC" src="https://i.ibb.co/98qr1dv/Icon-Circle-WC.png"/>   
         <Modal>
+        <ConfettiCanvas />
           <div className="containerModal">
             <div className="tittleModal">
               <h3><u>En el baño</u></h3>
@@ -134,9 +137,32 @@ export const ModalBreak = () => {
             <div className="containerBtnVolver">
               <button className="btnModalVolver" onClick={() => closee()}>¡He vuelto!</button>
             </div>
-
           </div>
         </Modal>
     </div>
   )
 }
+
+// export const Confeti = () => {
+
+//   const [Modal, open, close] = useModal('root', {
+//     preventScroll:true 
+//   });
+//   let { sumadepuntosboton1 } = useContext(UserContext)
+//     const opeen = () => {
+//       sumadepuntosboton1()
+//       open()
+//       pointsNotifications()
+//     }
+
+//   return (
+//     <div>
+//         <button className="btnModalVolver" onClick={() => opeen()}>¡He vuelto!</button>  
+//         <div className="lalala"> 
+//           <Modal>
+//             <ConfettiCanvas />
+//           </Modal>
+//         </div>     
+//     </div>
+//   )
+// }
