@@ -408,6 +408,12 @@ p.txt-navlink {
   padding-top: 20px;
   padding-bottom: 20px; }
 
+.containerLists {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin-top: 20px; }
+
 /* <---------------------MEDIA QUERY---------------------> */
 @media all and (max-width: 1190px) {
   .containerInfoNextSingIn {

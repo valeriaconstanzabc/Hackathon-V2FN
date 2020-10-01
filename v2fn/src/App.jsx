@@ -199,12 +199,14 @@ function App() {
                         <h4>Aplicación para medir la productividad de los equipos</h4>
                       </div>
                     </div>
+                    <div className="containerLists">
                     {data.listIds.map((listId, index) => {
                       const list = data.lists[listId];
                       return <List list={list} key={listId} iindex={index} />
                     })}
                     <InputContainer type="list" />
                     {provided.placeholder}
+                    </div>
                   </div>
                 )}
               </Droppable>
