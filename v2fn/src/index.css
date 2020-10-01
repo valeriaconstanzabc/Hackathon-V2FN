@@ -414,6 +414,9 @@ p.txt-navlink {
   flex-wrap: wrap;
   margin-top: 20px; }
 
+.jss1 {
+  flex-direction: column; }
+
 /* <---------------------MEDIA QUERY---------------------> */
 @media all and (max-width: 1190px) {
   .containerInfoNextSingIn {
