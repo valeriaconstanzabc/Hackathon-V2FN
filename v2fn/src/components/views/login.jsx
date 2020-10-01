@@ -123,12 +123,13 @@ const LogIn = (props) => {
                 <h6 className="footerLogIn"><u>Privacy Policity</u> and <u>Terms of Service</u></h6>
             </form>
             <div className="InfoSoftwareLogIn">
-                <h1 className="tittleApp">Nombre Software</h1>
+                <h1 className="tittleApp">EYAPP</h1>
                 <img className="imgApp" src="https://i.ibb.co/dGwpCSs/rafiki.png" alt="imgAPP"/>
                 <p className="definitionApp">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-                Lorem pellentesque hendrerit vitae quis. Massa erat risus amet 
-                phasellus non eget eget. Libero.
+                    Una herramienta para planificar tu día, organizar tus tareas y que se preocupa 
+                    por tu bienestar.
+                    Mientras mayor interacción hagas en ella, más puntos ganaras y estarás participando
+                    por increibles premios mensuales y anuales.
                 </p>
             </div>
         </div>

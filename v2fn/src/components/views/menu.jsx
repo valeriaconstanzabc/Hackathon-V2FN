@@ -7,9 +7,6 @@ const Menu = (props) => {
   const irAInicio = () => {
     props.history.push('/inicio')
   }
-  const irAProyecto = () => {
-    props.history.push('/board')
-  }
 
 return (
 
@@ -26,7 +23,7 @@ return (
         <p className="txt-navlink">Inicio</p>
       </a>
       
-      <a onClick={() => irAProyecto()} className="nav-link" id="v-pills-projects-tab" data-toggle="pill" href="#v-pills-projects" role="tab" aria-controls="v-pills-projects" aria-selected="false">
+      <a className="nav-link" id="v-pills-projects-tab" data-toggle="pill" href="#v-pills-projects" role="tab" aria-controls="v-pills-projects" aria-selected="false">
         <img className="imgIconMenu" src="https://i.ibb.co/bJHYNwL/Board.png"/>
         <p className="txt-navlink">Proyectos</p>
       </a>
