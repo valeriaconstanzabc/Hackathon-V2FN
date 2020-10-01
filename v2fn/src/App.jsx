@@ -18,6 +18,7 @@ import Nav from './components/Nav.jsx';
 import SignIn from './components/views/SignIn.jsx'
 import { DragDropContext, Droppable } from 'react-beautiful-dnd';
 import Welcome from './components/Welcome.jsx';
+import { UserProvider } from './components/context/UserContext.js'
 
 const useStyle = makeStyles((theme) => ({
   root: {
@@ -165,9 +166,13 @@ function App() {
 
           <Route path="/inicio">
             <Welcome />
-            <Nav />
+            <UserProvider>
+              <Nav />
+            </UserProvider>
             <Contacts />
-            <Menu />
+            <UserProvider>
+              <Menu />
+            </UserProvider>
           </Route>
 
           <Route path="/board">
@@ -204,9 +209,13 @@ function App() {
                 )}
               </Droppable>
             </DragDropContext>
-            <Nav />
+            <UserProvider>
+              <Nav />
+            </UserProvider>
             <Contacts />
-            <Menu />
+            <UserProvider>
+              <Menu />
+            </UserProvider>
           </Route>
 
         </Switch>

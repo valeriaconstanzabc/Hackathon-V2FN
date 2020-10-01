@@ -49,6 +49,10 @@ export const notifications = () => {
   }
 }
 
+export const pointsNotifications = () => {
+  toast("Felitaciones! haz ganado 3 puntos")
+}
+
 export const activeNotification = () => {
   notifications()
 }
