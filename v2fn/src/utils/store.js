@@ -1,15 +1,23 @@
 const cards = [
   {
     id: 'card-1',
-    title: 'Learning how to cook',
+    title: 'Prototipo en Figma',
   },
   {
     id: 'card-2',
-    title: 'Making sandwich',
+    title: 'Esqueleto en React',
   },
   {
     id: 'card-3',
-    title: 'Taking the trash out',
+    title: 'Crear data base',
+  },
+  {
+    id: 'card-4',
+    title: 'Prototipo en baja calidad',
+  },
+  {
+    id: 'card-5',
+    title: 'Entrevistas Usuarios',
   },
 ];
 
