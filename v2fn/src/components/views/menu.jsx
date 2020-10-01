@@ -1,6 +1,7 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
 import { ModalWC, ModalBreak, ModalMeeting, ModalLunch } from './modalWC.jsx';
+import { ToastContainer } from 'react-toastify';
 
 const Menu = (props) => {
 
@@ -12,6 +13,18 @@ return (
 
 <div className="row containerMenu">
   <div className="col-3">
+  <ToastContainer
+    className="hdk9ldvk93"
+    position="top-right"
+    autoClose={5000}
+    hideProgressBar={false}
+    newestOnTop={false}
+    closeOnClick
+    rtl={false}
+    pauseOnFocusLoss
+    draggable
+    pauseOnHover
+  />
     <div className="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
       <a className="logo-nav"  data-toggle="pill" href="#v-pills-home" role="tab" aria-controls="v-pills-home" aria-selected="true"> 
         <img src="https://i.ibb.co/0ZHm0t0/EY-Logo-Beam-Tag-Stacked-RGB-EN-1.png">

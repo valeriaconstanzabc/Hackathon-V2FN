@@ -1,24 +1,13 @@
 import React from 'react'
 import { Link } from "react-router-dom";
-import { ToastContainer } from 'react-toastify';
 import { activeNotification } from '../components/Functions.js'
+
 
 export const Welcome = () => {
     return (
         <div className="containerWelcome">
             <div className="containerOneWelcome">
-                <ToastContainer
-                    className="hdk9ldvk93"
-                    position="top-right"
-                    autoClose={5000}
-                    hideProgressBar={false}
-                    newestOnTop={false}
-                    closeOnClick
-                    rtl={false}
-                    pauseOnFocusLoss
-                    draggable
-                    pauseOnHover
-                />
+
                 <div className="containerOneWelcome-fila1">
                     <div className="uno">
                         <Link to="/board">
