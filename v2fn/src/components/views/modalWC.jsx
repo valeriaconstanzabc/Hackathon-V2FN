@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
 import useModal from 'react-hooks-use-modal';
 import { UserContext } from '../context/UserContext.js'
+import { pointsNotifications } from '../Functions.js'
 
 
 export const ModalWC = () => {
@@ -12,6 +13,7 @@ export const ModalWC = () => {
     const closee = () => {
       sumadepuntosboton1()
       close()
+      pointsNotifications()
     }
 
   return (
@@ -45,6 +47,7 @@ export const ModalMeeting = () => {
   const closee = () => {
     sumadepuntosboton1()
     close()
+    pointsNotifications()
   }
 
   return (
@@ -79,6 +82,7 @@ export const ModalLunch = () => {
   const closee = () => {
     sumadepuntosboton1()
     close()
+    pointsNotifications()
   }
 
   return (
@@ -113,6 +117,7 @@ export const ModalBreak = () => {
   const closee = () => {
     sumadepuntosboton1()
     close()
+    pointsNotifications()
   }
 
   return (
